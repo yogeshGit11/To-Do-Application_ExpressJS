@@ -1,0 +1,57 @@
+<%- include('common/header.ejs') %>
+
+    <div class="col-sm-2">
+        <form action="/add">
+            <button class="btn btn-warning fw-bold">ADD TASK</button>
+        </form>
+    </div>
+
+
+    <div class="col-sm-10">
+        <div>
+            <h3 class="bg-info text-center ">YOUR ALL TASKS</h3>
+
+            <% data.forEach(element=> { %>
+                <div class="bg-dark  p-2 mt-1">
+
+                    <strong class="text-light">
+                        <%= element.task %>
+                    </strong>
+
+                    <div class="row">
+                        <div class="col-sm-1 ms-1">
+                            <div>
+                                <form action="/editTask/<%= element._id %>" method="get">
+                                    <button class="btn" type="submit">
+                                        <i class="fa-solid fa-pen-to-square text-warning"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-1">
+                            <div>
+                                <form action="/deleteTask/<%= element._id %>" method="post" onsubmit="return confirm('Are You Sure To Remove This Task ?')">
+                                    <button class="btn" type="submit">
+                                        <i class="fa-solid fa-trash text-danger"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 offset-3 text-light">
+                            <small>
+                                <%= element.date %>
+                            </small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <% }); %>
+        </div>
+    </div>
+
+
+    <%- include('common/footer') %>

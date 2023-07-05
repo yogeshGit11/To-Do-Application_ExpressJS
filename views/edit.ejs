@@ -1,0 +1,16 @@
+<%- include('common/header.ejs') %>
+
+    <div class="col-sm-10">
+        <h3 class="alert-info text-dark text-center mt-1 offset-2">Update Task</h3>
+
+        <div class="offset-3 col-sm-8">
+            <form action="/updateTask/<%= data._id %>" method="post">
+                <textarea name="task" cols="20" rows="6" class="form-control bg-dark text-light" placeholder="Create New Task"
+                    required><%= data.task %></textarea>
+                <input type="submit" value="UPDATE" class="btn btn-warning fw-bold mt-1 offset-5">
+            </form>
+        </div>
+
+    </div>
+
+    <%- include('common/footer.ejs') %>

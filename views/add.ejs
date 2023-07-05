@@ -1,0 +1,16 @@
+<%- include('common/header.ejs') %>
+
+  <div class="col-sm-10">
+    <h3 class="alert-info text-dark text-center mt-1 offset-2">Add New Task</h3>
+
+    <div class="offset-3 col-sm-8">
+      <form action="/createTask" method="post">
+        <textarea name="task" id="" cols="20" rows="6" class="form-control" placeholder="Create New Task"
+          required></textarea>
+        <input type="submit" value="ADD" class="btn btn-info fw-bold mt-1 offset-5">
+      </form>
+    </div>
+
+  </div>
+
+  <%- include('common/footer.ejs') %>
